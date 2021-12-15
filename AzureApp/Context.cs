@@ -15,8 +15,7 @@ namespace AzureApp
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server = tcp:danielolsenhrserver.database.windows.net,1433; Initial Catalog = HRDB; Persist Security Info = False; 
-                    User ID = Daniel; Password = adb211212@; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                optionsBuilder.UseSqlServer("nepp");
             }
             
         }
