@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Maze";
+}
+
+<h1>Maze</h1>
+<p>A random maze generator! Built with C#.</p>
+<p>Print it and you have some entertainment for a rainy sunday.<br />
+   It probably won't work on mobile devices...</p>
+<button value="Create" onclick="location.href='@Url.Action("RandomMaze", "RandomMaze" )'">New maze</button>
+<br />
+<container class="container-fluid">
+    <textarea style="line-height: 1; font-family: Consolas, 'Lucida Console', 'monospace'"; rows="100" cols="180">@Model</textarea>
+</container>
+@*<p style="line-height: 1; font-family:Consolas" rows="100" cols="100" >@Model</p>*@
+
+@*<p style="font-family:Consolas" >@Model</p>*@
+

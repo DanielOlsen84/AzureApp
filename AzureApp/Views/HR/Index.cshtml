@@ -1,0 +1,82 @@
+﻿@model IEnumerable<AzureApp.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "HR-System";
+}
+<div>
+    <h1>HR-System</h1>
+</div>
+<div>
+   
+    <p>Database tests. Employees can be added and are read from an Azure SQL-database.<br />
+    I am currently working on adding the rest of the CRUD-functions (Create, Read, Update, Delete)</p>
+</div>
+<div>
+    @*@using (Html.BeginForm("AddEmployee", FormMethod.Post)) {
+    Html.TextBox(string.Empty, new { name = "textbox" });
+
+    <input type="submit">
+    }*@
+
+    @*<button value="Create" onclick="location.href='@Html.ActionLink("AddEmployees", "HR")'">Add</button>*@
+    <div>
+        <form asp-action="AddEmployees">
+            <div class="form-group">
+                <div class="col">
+                    <label for="firstName" type="text">First Name</Label>
+                    <input type="text" class="form-control" name="firstName" />
+                </div>
+                <br />
+                <div class="col">
+                    <label for="firstName" type="text">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" />
+                </div>
+                <br />
+                <div class="col">
+                    <label for="firstName" type="text">Salary</Label>
+                    <input type="text" class="form-control" name="salary" />
+                </div>
+                <br />
+                <input type="submit" value="Add Employee" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+    
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.FirstName)*@
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.FirstName)*@
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.FirstName)*@
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+
