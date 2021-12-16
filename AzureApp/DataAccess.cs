@@ -46,5 +46,30 @@ namespace AzureApp
             List<EmployeeModel> result = context.Employees.ToList();
             return result;
         }
+
+        public void DeleteEmployee(int id)
+        {
+
+            EmployeeModel employee = context.Employees.Where(x => x.Id == id).First();
+            context.Employees.Remove(employee);
+
+            context.SaveChanges();
+        }
+
+        public void AddChatMessage(string message, string userName)
+        {
+            ChatMessageModel chatMessage = new ChatMessageModel() { Message = message, UserName = userName };
+
+            context.ChatMessages.Add(chatMessage);
+
+            context.SaveChanges();
+
+        }
+
+        public List<ChatMessageModel> GetChatMessages()
+        {
+            List<ChatMessageModel> result = context.ChatMessages.OrderByDescending(x => x.Id).ToList();
+            return result;
+        }
     }
 }

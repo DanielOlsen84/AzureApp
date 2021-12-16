@@ -30,15 +30,16 @@ namespace AzureApp.Controllers
             return View("Index", employees);
         }
 
-        //public string AddEmployees(string fName)
-        //{
+        public IActionResult DeleteEmployee(int id)
+        {
 
-        //    DataAccess dataAccess = new DataAccess();
+            DataAccess dataAccess = new DataAccess();
 
-        //    dataAccess.AddEmployee(fName, fName, 79);
-        //    var employees = dataAccess.GetEmployees();
-        //    return "Hi " + fName;
-        //}
+            dataAccess.DeleteEmployee(id);
+            var employees = dataAccess.GetEmployees();
+            return View("Index", employees);
+        }
+              
 
     }
 }

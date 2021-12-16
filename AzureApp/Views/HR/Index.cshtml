@@ -8,8 +8,7 @@
 </div>
 <div>
    
-    <p>Database tests. Employees can be added and are read from an Azure SQL-database.<br />
-    I am currently working on adding the rest of the CRUD-functions (Create, Read, Update, Delete)</p>
+    <p>Database tests. Employees can be added, deleted and are read from an Azure SQL-database.</p>
 </div>
 <div>
     @*@using (Html.BeginForm("AddEmployee", FormMethod.Post)) {
@@ -74,7 +73,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Salary)
             </td>
-
+            <td>
+                @Html.ActionLink("Delete", "DeleteEmployee", new { id=item.Id })
+            </td>
         </tr>
         }
     </tbody>

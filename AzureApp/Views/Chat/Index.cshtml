@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Chat";
+}
+<div>
+    <h1>Azure Miscord Chat</h1>
+</div>
+<br />
+<div>
+    <form asp-action="SendChatMessage">
+
+        <textarea name="chatbox" readonly rows="20" cols="100">@Model</textarea>
+        <div class="form-row">
+            <label for="chatmessage" type="text">Message</label>
+            <input style=" width:400px " type="text" name="chatmessage" />
+        </div>
+        <div class="form-row">
+            <label for="username" type="text">Username</label>
+            <input style="width:100px" type="text" name="username" />
+            <input type="submit" class="btn btn-primary" value="Send" />
+        </div>
+</form>
+</div>
+
